@@ -1,0 +1,38 @@
+.c-breadcrumbs {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 10px;
+    padding: 20px 0 0 0;
+    margin-bottom: 24px;
+    @include overTab {
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 0 0 3%;
+    }
+    &__item {
+        color: #5d5d5d;
+        font-size: 1.2rem;
+        &::after {
+            content: ">";
+            margin: 0 10px;
+        }
+        &:last-child {
+            &::after {
+                content: "";
+            }
+        }
+    }
+    &__link {
+        color: #5d5d5d;
+        text-decoration: none;
+        -webkit-transition: 0.5s;
+        transition: 0.5s;
+        &:hover {
+            color: #ff5f32;
+            -webkit-transition: 0.5s;
+            transition: 0.5s;
+        }
+    }
+
+}

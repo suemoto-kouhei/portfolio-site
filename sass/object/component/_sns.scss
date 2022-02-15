@@ -1,0 +1,15 @@
+.c-sns {
+    &__link {
+        position: absolute;
+        bottom: 60px;
+        left: 50%;
+        transform: translateX(-50%);
+        display: flex;
+        li {
+            width: 50px;
+            &:nth-child(2) {
+                margin: 0 10px;
+            }
+        }
+    }
+}
