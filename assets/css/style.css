@@ -665,7 +665,8 @@ li {
 
 .l-archiveBlog__text {
   font-size: 1.7rem;
-  margin-top: 40px;
+  margin: 40px 20px;
+  text-align: left;
 }
 
 .l-singleBlog__wrap {
@@ -701,6 +702,11 @@ li {
 
 .c-sns__link li:nth-child(2) {
   margin: 0 10px;
+}
+
+.c-sns__link li img {
+  height: 50px;
+  width: 50px;
 }
 
 .c-btn__link {
@@ -765,23 +771,42 @@ li {
 }
 
 .c-btn__archiveLink {
-  border: 1px solid #afafb0;
-  margin: 20px auto 0;
-  width: 200px;
-  height: 60px;
-  line-height: 60px;
+  margin-top: 40px;
 }
 
 .c-btn__archiveLink a {
-  display: block;
-  font-size: 1.4rem;
-  transition: 1s ease;
+  color: #818181;
+  font-size: 1.6rem;
+  background: transparent;
+  padding: 18px 30px;
+  border: 1px solid #818181;
+  border-radius: 6px;
+  position: relative;
+  z-index: 1;
+  transition: .3s;
+}
+
+.c-btn__archiveLink a::before {
+  content: "";
   width: 100%;
-  font-size: 1.4rem;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background: #818181;
+  transform-origin: 100% 50%;
+  transform: scaleX(0);
+  transition: transform ease .3s;
 }
 
 .c-btn__archiveLink a:hover {
-  border-bottom: 1px solid #7b7b7b;
+  color: #fff;
+}
+
+.c-btn__archiveLink a:hover::before {
+  transform-origin: 0% 50%;
+  transform: scaleX(1);
 }
 
 .c-menu-trigger {
@@ -834,7 +859,7 @@ li {
   top: 5px;
   left: -4px;
   color: #fff;
-  font-size: 0.6rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
@@ -900,15 +925,9 @@ li {
   margin-top: 0;
 }
 
-.c-section__subTitle.aside::before {
-  content: "";
-  background: #0ba360;
-  line-height: 2rem;
-  display: inline-block;
-  height: 2rem;
-  width: 5px;
-  padding-top: 3px;
-  margin-right: 8px;
+.c-section__subTitle.aside {
+  padding-left: 1rem;
+  border-left: 4px solid #0ba360;
 }
 
 .c-breadcrumbs {
@@ -1047,6 +1066,12 @@ li {
 .c-blog__category .has_child:hover > ul {
   visibility: visible;
   opacity: 1;
+}
+
+@media print, screen and (max-width: 768px) {
+  .c-blog__category .has_child:hover > ul:last-child {
+    margin-bottom: 10px;
+  }
 }
 
 .c-blog__category .has_child > a {
