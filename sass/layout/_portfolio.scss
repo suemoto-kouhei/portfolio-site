@@ -33,8 +33,6 @@
         img {
             width: 850px;
             @include overTab {
-                max-height: auto;
-                min-height: auto;
                 width: 100%;
             }
         }
