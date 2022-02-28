@@ -597,44 +597,6 @@ li {
   }
 }
 
-.l-about__inner {
-  width: 100%;
-  background-image: url(/assets/img/about.png);
-  color: #ffffff;
-  margin: 0 auto;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-.l-about__title {
-  margin: 0 auto;
-  font-size: 2.6rem;
-  text-align: center;
-  padding-top: 40px;
-}
-
-.l-about__text {
-  font-size: 2rem;
-  height: 100%;
-  width: 100%;
-  line-height: 1.5;
-  letter-spacing: .1em;
-  padding-bottom: 30px;
-}
-
-.l-about__mask {
-  height: 100%;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.6);
-  overflow: hidden;
-  padding: 0 30px;
-}
-
-.l-about__mask p {
-  margin-top: 20px;
-}
-
 .l-archiveBlog__container {
   display: flex;
   position: relative;
