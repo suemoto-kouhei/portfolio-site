@@ -508,7 +508,6 @@ li {
   color: #ffffff;
   text-align: center;
   width: 100%;
-  margin-top: 60px;
 }
 
 .l-contents {
@@ -600,7 +599,7 @@ li {
 
 .l-about__inner {
   width: 100%;
-  background-image: url(/assets/img/about.png);
+  background-image: url(assets/img/about.png);
   color: #ffffff;
   margin: 0 auto;
   background-position: center;
