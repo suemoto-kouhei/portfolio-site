@@ -1,11 +1,11 @@
 .c-section {
     &__title {
-        background: #ffffff;
-        font-size: 3rem;
-        padding: 20px 0;
-        color: #0ba360;
-        font-weight: bold;
-        text-align: center;
+  background: #ffffff;
+  font-size: 4rem;
+  padding: 10px 0;
+  color: #0ba360;
+  font-weight: bold;
+  text-align: center;
         @include overTab {
             font-size: 3rem;
         }
@@ -27,16 +27,8 @@
             margin-top: 0;
         }
         &.aside {
-            &::before {
-                content: "";
-                background: #0ba360;
-                line-height: 2rem;
-                display: inline-block;
-                height: 2rem;
-                width: 5px;
-                padding-top: 3px;
-                margin-right: 8px;
-            }
+            padding-left: 1rem;
+            border-left: 4px solid #0ba360;
         }
     }
 }

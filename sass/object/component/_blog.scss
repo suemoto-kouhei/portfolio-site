@@ -71,6 +71,11 @@
                 > ul {
                     visibility: visible;
                     opacity: 1;
+                    @include overTab {
+                        &:last-child {
+                            margin-bottom: 10px;
+                        }
+                    }
                 }
             }
             > a {
