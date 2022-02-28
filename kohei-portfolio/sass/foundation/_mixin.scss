@@ -1,0 +1,112 @@
+// COLORS
+// @include cl(black);
+//--------------------------------------------------
+
+$colors: (
+	white: #fff,
+	black: #000,
+);
+
+@function cl($key) {
+	@return map-get($colors, $key);
+}
+
+// FONT
+// @include TimesNewRoman;
+//--------------------------------------------------
+
+@mixin TimesNewRoman {
+	font-family: "Times New Roman", "YuMincho", "Hiragino Mincho ProN", "Yu Mincho", "MS PMincho", serif;
+}
+
+// RESPONSIVE
+// @include overTab
+//--------------------------------------------------
+
+@mixin overTab {
+	@media print,screen and (max-width: 768px) {
+		@content;
+	}
+}
+
+// UTILITY
+//--------------------------------------------------
+
+._sp {
+    display: inline;
+	@include overTab {
+		display: none;
+	}
+}
+
+
+
+._pc {
+	display: none;
+	@include overTab {
+		display: block;
+	}
+}
+
+//スクリーンサイズ デザインサイズを調整
+$screensize:1280px;
+//スマホサイズ
+$sp-size:768px;
+
+//要素を真ん中にする
+@mixin pos($top:50%, $left:50%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(-50%,-50%);
+}
+
+//要素を半分にする 例:font-size: half(30) + px;
+@function half($size) {
+    $halfSize:round($size / 2);
+    @if $halfSize <= 10{
+    @return 10px;
+    }
+    @return $halfSize;
+}
+
+//ビューポートが変わっても要素の比率を一定にする
+@function get-vw($size, $viewport: $screensize) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vw;
+}
+@function get-vh($size, $viewport: $screensize) {
+    $rate: 100 / $viewport;
+    @return $rate * $size * 1vh;
+}
+
+@mixin width-vw($width-size) {
+    width: get-vw( $width-size);
+}
+
+@mixin height-vw($height-size) {
+    height: get-vw( $height-size);
+}
+
+@mixin font-vw($font_size:10) {
+    font-size: $font_size + px;
+    font-size: get-vw( $font_size );
+}
+@mixin font-vh($font_size:10) {
+    font-size: $font_size + px;
+    font-size: get-vh( $font_size );
+}
+
+//見本 ガチガチ固定
+// .main {
+//     position: relative;
+//     @include height-vw(400px);
+//     @include width-vw(400px);
+//     margin: 0 auto;
+//     background-color: green;
+//     &__title {
+//         @include pos();
+//         @include font-vw(20px);
+//         color: pink;
+//     }
+// }

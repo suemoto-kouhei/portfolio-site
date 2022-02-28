@@ -1,0 +1,29 @@
+.c-pager {
+    margin-top: 40px;
+    &__items {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+    }
+    &__item {
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 50%;
+        text-align: center;
+        &.is-active {
+            border: 1px solid #2c2c2c;
+            &.pager__link {
+                color: #2c2c2c;
+            }
+        }
+    }
+    &__link {
+        color: #9b9b9b;
+        font-size: 1.6rem;
+        text-decoration: none;
+    }
+}

@@ -1,0 +1,53 @@
+.l-archiveBlog {
+    &__container{
+        display: flex;
+        position: relative;
+        box-sizing: border-box;
+    }
+    &__list {
+        width: 70%;
+        padding: 0 3% 60px 0;
+        @include overTab {
+            width: 100%;
+            padding: 0 3% 0 3%;
+        }
+    }
+    &__wrap {
+        text-align: center;
+        background: #ffffff;
+        color: #7b7b7b;
+        padding: 30px 0;
+        margin-top: 60px;
+        min-width: 400px;
+        max-width: 1000px;
+        @include overTab {
+            min-width: 100%;
+            max-width: 100%;
+        }
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    &__category {
+        color: #4773ba;
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+    &__img {
+        height: 500px;
+        width: 100%;
+        min-width: 300px;
+        object-fit: cover;
+        margin-top: 20px;
+        img {
+            height: 100%;
+            width: 100%;
+        }
+    }
+    &__text {
+        font-size: 1.7rem;
+        margin: 40px 20px;
+        text-align: left;
+    }
+}

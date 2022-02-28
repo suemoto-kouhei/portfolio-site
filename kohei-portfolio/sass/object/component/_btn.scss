@@ -1,0 +1,89 @@
+.c-btn {
+    &__link {
+        background-image: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+        width: 200px;
+        height: 80px;
+        line-height: 80px;
+        border-radius: 50px;
+        margin: 0 auto;
+        display: block;
+        transition: .5s all;
+        bottom: 20px;
+        left: 50%;
+        transform: translate(-50%);
+        position: absolute;
+        bottom: 20px;
+        box-shadow: 5px 5px 5px rgba(0,0,0,0.3);
+        @include overTab {
+            height: 60px;
+            line-height: 60px;
+            width: 180px;
+            bottom: 10px;
+        }
+        a {
+            width: 100%;
+            height: 100%;
+            display: block;
+            cursor: pointer;
+            text-align: center;
+            font-size: 2rem;
+            color: #ffffff;
+            position: relative;
+            transition: .5s ease;
+            @include overTab {
+                font-size:  1.6rem;
+            }
+            &:hover {
+                opacity: .5;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                width: 0;
+                height: 0;
+                border-left: 10px solid #ffffff;
+                border-top: 10px solid transparent;
+                border-bottom: 10px solid transparent;
+            }
+        }
+    }
+    &__archiveLink {
+        margin-top: 40px;
+        a {
+            color: #818181;
+            font-size: 1.6rem;
+            background: transparent;
+            padding: 18px 30px;
+            border: 1px solid #818181;
+            border-radius: 6px;
+            position: relative;
+            z-index: 1;
+            transition: .3s;
+            &::before {
+                content: "";
+                width: 100%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                z-index: -1;
+                background: #818181;
+                transform-origin: 100% 50%;
+                transform: scaleX(0);
+                transition: transform ease .3s;
+            }
+            &:hover {
+                color: #fff;
+                &::before {
+                    transform-origin: 0% 50%;
+  transform: scaleX(1);
+                }
+            }
+        }
+    }
+}
+
+

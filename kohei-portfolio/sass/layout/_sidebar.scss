@@ -1,0 +1,56 @@
+.l-sidebar {
+    z-index: 100;
+    @include overTab {
+        left: 100%;
+    }
+    &__inner {
+        position: fixed;
+        height: 100vh;
+        box-sizing: border-box;
+        top: 0;
+        width: 20%;
+        padding-top: 30px;
+        text-align: center;
+        transition: all .4s;
+        @include overTab {
+            left: 100%;
+            &.active {
+                left: 0;
+            }
+            width: 100%;
+            background: #ffffff;
+        }
+    }
+    &__siteName {
+        overflow: hidden;
+        a {
+            font-size: 4.6rem;
+            font-weight: bold;
+            color: #249eff;
+            font-family: 'EB Garamond';
+            background: #99fcff;
+            background: -moz-linear-gradient(left, #99fcff 0%, #fff56b 100%);
+            background: -webkit-linear-gradient(left, #99fcff 0%,#fff56b 100%);
+            background: linear-gradient(to right, #99fcff 0%,#fff56b 100%);
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#99fcff', endColorstr='#fff56b',GradientType=1 );
+        }
+    }
+    &__nav {
+        position: absolute;
+        top: 25vh;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+    }
+    &__nav a {
+        display: block;
+        color: #333;
+        font-size: 2.5rem;
+        font-weight: bold;
+        margin-bottom: 30px;
+        transition: .5s ease;
+        &:hover {
+            color: #0ba360;
+        }
+    }
+}

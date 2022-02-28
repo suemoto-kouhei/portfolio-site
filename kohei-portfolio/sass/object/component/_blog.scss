@@ -1,0 +1,200 @@
+.c-blog {
+    &__container{
+        display: flex;
+        @include overTab {
+            display: block;
+        }
+    }
+    &__date {
+        font-size: 1.3rem;
+    }
+    &__title {
+        font-size: 2.5rem;
+        margin-top: 20px;
+    }
+    &__tag {
+        color: #4773ba;
+        margin-top: 20px;
+        font-size: 1.3rem;
+    }
+    &__img {
+        width: 100%;
+        margin-top: 20px;
+        img {
+            width: 100%;
+        }
+    }
+    &__aside {
+        width: 30%;
+        height: 100vh;
+        padding: 0 3%;
+        @include overTab {
+            width: 100%;
+            margin-top: 120px;
+        }
+    }
+    &__subTitle{
+        font-size: 2rem;
+    }
+    &__category {
+        color: #ffffff;
+        width: 100%;
+        background:#222222;
+        /*ナビゲーションを横並びに*/
+        ul {
+            list-style: none;
+            display: flex;
+            @include overTab {
+                display: block;
+            }
+            /*2階層目以降は横並びにしない*/
+            ul {
+                display: block;
+                li {
+                    /*ナビゲーションのリンク設定*/
+                    a {
+                        display: block;
+                        text-decoration: none;
+                        color: #999;
+                        padding:20px 35px;
+                        transition:all .3s;
+                        &:hover {
+                            color:#fff;
+                        }
+                    }
+                }
+            }
+        }
+        .has_child {
+            color: #fff;
+            &:hover {
+                > ul {
+                    visibility: visible;
+                    opacity: 1;
+                    @include overTab {
+                        &:last-child {
+                            margin-bottom: 10px;
+                        }
+                    }
+                }
+            }
+            > a {
+                position: relative;
+                &::after {
+                    content: "▼";
+                    position: absolute;
+                    font-size: 1.2rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    margin-left: 8px;
+                    left: 100%;
+                    display: block;
+                }
+            }
+            ul {
+                /*絶対配置で位置を指定*/
+                position: absolute;
+                left:20;
+                top:118px;
+                z-index: 4;
+                    /*形状を指定*/
+                background:#ffffff;
+                width:180px;
+                    /*はじめは非表示*/
+                visibility: hidden;
+                opacity: 0;
+                    /*アニメーション設定*/
+                transition: all .3s;
+                /*ナビゲーションaタグの形状*/
+                @include overTab {
+                    position: relative;
+                    left:0;
+                    top:10px;
+                    width:100%;
+                    visibility:visible;/*JSで制御するため一旦表示*/
+                    opacity:1;/*JSで制御するため一旦表示*/
+                    display: none;/*JSのslidetoggleで表示させるため非表示に*/
+                    transition:none;/*JSで制御するためCSSのアニメーションを切る*/
+                }
+                li {
+                    a {
+                        color: #000000;
+                        border-bottom:2px dotted #AFAFB0;
+                        @include overTab {
+                            border-bottom:1px solid #ccc;
+                        }
+                        &:hover {
+                            background:#AFAFB0;
+                        }
+                        &:active {
+                            background:#AFAFB0;
+                        }
+                    }
+                    &:last-child a{
+                        border-bottom:none;
+                    }
+                }
+            }
+        }
+    }
+    &__categoryItem {
+        font-size: 2rem;
+        padding: 10px 0;
+        margin: 0 30px;
+        @include overTab {
+            font-size: 1.6rem;
+            text-align: center;
+        }
+    }
+    &__pickupList {
+        margin-top: 20px;
+    }
+    &__pickupWrap {
+        margin-top: 20px;
+    }
+    &__pickupimg {
+        @include overTab {
+            height: 300px;
+        }
+        img {
+            height: 100%;
+        }
+    }
+    &__pickupTitle {
+        font-size: 1.6rem;
+        margin-top: 20px;
+        color: #7B7B7B;
+    }
+    &__tagList {
+        margin-top: 80px;
+        font-size: 1.6rem;
+    }
+    &__tagList {
+        margin-top: 80px;
+    }
+    &__tags {
+        margin-top: 20px;
+    }
+    &__tagName {
+        padding: 10px 0 10px 10px;
+    }
+    &__archive {
+        margin-top: 80px;
+        @include overTab {
+            padding-bottom: 80px;
+        }
+    }
+    &__archiveList {
+        margin-top: 20px;
+    }
+    &__archiveDate {
+        font-size: 1.6rem;
+        border-top: 3px dotted #afafb0;
+        padding: 10px 0 10px 10px;
+        &:last-child {
+            border-bottom: 3px dotted #afafb0;
+        }
+    }
+
+}
+
